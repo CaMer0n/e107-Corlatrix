@@ -147,9 +147,30 @@ $NAVIGATION_TEMPLATE["footernav"]["item_active"] 		= "<li class='active'{LINK_OP
 $NAVIGATION_TEMPLATE["footernav"]["end"] 				= "</ul>\n";
 
 
+$NAVIGATION_TEMPLATE["alt"]["start"] 				    = '';
+$NAVIGATION_TEMPLATE["alt"]["item"] 			        = '<div class="col-md-3 col-sm-6">
+										                    	<div class="widget">
+										                        	<h3>{LINK_ICON}{LINK_NAME}</h3>{LINK_SUB}
+										                        </div>
+										                   </div>';
+
+// Footer Link Menus.
+$NAVIGATION_TEMPLATE["alt"]["item_submenu"]             = $NAVIGATION_TEMPLATE["alt"]["item"];
+$NAVIGATION_TEMPLATE["alt"]["item_active"]              = $NAVIGATION_TEMPLATE["alt"]["item"] ;
+//$NAVIGATION_TEMPLATE["alt"]["item_active"] 			= "<li class='active'{LINK_OPEN}><a href='{LINK_URL}' title=\"{LINK_DESCRIPTION}\">{LINK_ICON}{LINK_NAME}</a></li>\n";
+$NAVIGATION_TEMPLATE["alt"]["end"] 					    = '';
+
+
+$NAVIGATION_TEMPLATE["alt"]["submenu_start"] 		= "<ul>";
+$NAVIGATION_TEMPLATE["alt"]["submenu_item"]			= "<li><a href='{LINK_URL}'{LINK_OPEN}>{LINK_ICON}{LINK_NAME}</a></li>\n";
+$NAVIGATION_TEMPLATE["alt"]["submenu_loweritem"] 	= "<li><a href='{LINK_URL}'{LINK_OPEN}>{LINK_ICON}{LINK_NAME}</a>{LINK_SUB}</li>\n";
+$NAVIGATION_TEMPLATE["alt"]["submenu_item_active"] 	= "<li class='active'><a href='{LINK_URL}'>{LINK_ICON}{LINK_NAME}</a></li>\n";
+$NAVIGATION_TEMPLATE["alt"]["submenu_end"] 			= "</ul>";
+
+
+
 //Alts
-$NAVIGATION_TEMPLATE['alt'] 						= $NAVIGATION_TEMPLATE['side'];
+//$NAVIGATION_TEMPLATE['alt'] 						= $NAVIGATION_TEMPLATE['side'];
 $NAVIGATION_TEMPLATE['alt5'] 						= $NAVIGATION_TEMPLATE['side'];
 $NAVIGATION_TEMPLATE['alt6'] 						= $NAVIGATION_TEMPLATE['side'];
 
-?>

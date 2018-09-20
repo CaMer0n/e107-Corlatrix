@@ -264,7 +264,7 @@ $LAYOUT['_header_'] = '
 <div class="container">
 <div class="row">
    <div class="col-sm-6 col-xs-4">
-	   <div class="top-number"><p><i class="fa fa-phone-square"></i> {CORLATE_PHONE}</p></div>
+	   {CORLATE_PHONE}
    </div>
    <div class="col-sm-6 col-xs-8">
 	  <div class="social">
@@ -284,7 +284,7 @@ $LAYOUT['_header_'] = '
 	   <span class="icon-bar"></span>
 	   <span class="icon-bar"></span>
    </button>
-   <a class="navbar-brand" href="{SITEURL}">{SITELOGO}</a>
+   <a class="navbar-brand" href="{SITEURL}">{SITELOGO: h=90}</a>
 </div>
 
 <div class="collapse navbar-collapse navbar-right">
@@ -304,6 +304,9 @@ $LAYOUT['_footer_'] =  <<<TMPL
     <section id="bottom">
         <div class="container wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
             <div class="row">
+            	{NAVIGATION=alt}
+            	
+            	<!--
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
                         <h3>Company</h3>
@@ -317,7 +320,7 @@ $LAYOUT['_footer_'] =  <<<TMPL
                             <li><a href="#">Contact us</a></li>
                         </ul>
                     </div>
-                </div><!--/.col-md-3-->
+                </div>
 
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
@@ -332,7 +335,7 @@ $LAYOUT['_footer_'] =  <<<TMPL
                             <li><a href="#">Billing system</a></li>
                         </ul>
                     </div>
-                </div><!--/.col-md-3-->
+                </div>
 
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
@@ -347,7 +350,7 @@ $LAYOUT['_footer_'] =  <<<TMPL
                             <li><a href="#">Article Writing</a></li>
                         </ul>
                     </div>
-                </div><!--/.col-md-3-->
+                </div>
 
                 <div class="col-md-3 col-sm-6">
                     <div class="widget">
@@ -362,7 +365,9 @@ $LAYOUT['_footer_'] =  <<<TMPL
                             <li><a href="http://www.e107.org" target="_blank">e107</a></li>
                         </ul>
                     </div>
-                </div><!--/.col-md-3-->
+                </div>
+                -->
+                
             </div>
         </div>
     </section><!--/#bottom-->
@@ -582,27 +587,3 @@ $LAYOUT['contact'] =  <<<TMPL
 
 TMPL;
 
-
-// Are these still used ?
-$NEWSCAT = "\n\n\n\n<!-- News Category -->\n\n\n\n
-	<div style='padding:2px;padding-bottom:12px'>
-	<div class='newscat_caption'>
-	{NEWSCATEGORY}
-	</div>
-	<div style='width:100%;text-align:left'>
-	{NEWSCAT_ITEM}
-	</div>
-	</div>
-";
-
-
-$NEWSCAT_ITEM = "\n\n\n\n<!-- News Category Item -->\n\n\n\n
-		<div style='width:100%;display:block'>
-		<table style='width:100%'>
-		<tr><td style='width:2px;vertical-align:middle'>&#8226;&nbsp;</td>
-		<td style='text-align:left;height:10px'>
-		{NEWSTITLELINK}
-		</td></tr></table></div>
-";
-
-?>

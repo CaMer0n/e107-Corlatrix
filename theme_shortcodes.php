@@ -23,7 +23,14 @@ class theme_shortcodes extends e_shortcode
 	function sc_corlate_phone()
 	{
 		$phone = e107::pref('theme', 'phone');
-		return $phone;
+		
+		if(empty($phone))
+		{
+			return null;
+		}
+
+		return '<div class="top-number"><p><i class="fa fa-phone-square"></i> '.$phone.'</p></div>';
+
 	}
 
 	// Search
@@ -45,15 +52,18 @@ class theme_shortcodes extends e_shortcode
 	}
 
 	// Top Right Nav
-	function sc_top_right_nav($parm='')
+	function sc_top_right_nav($parm=array())
 	{
 		include_lan(e_PLUGIN."login_menu/languages/".e_LANGUAGE.".php");
 
 		$tp = e107::getParser();
+		$login_menu_shortcodes = null;
 		require(e_PLUGIN."login_menu/login_menu_shortcodes.php"); // don't use 'require_once'.
 		$direction = vartrue($parm['dir']) == 'up' ? ' dropup' : '';
 
 		$userReg = defset('USER_REGISTRATION');
+
+		$text = '';
 
 		if(!USERID) // Logged Out.
 		{
