@@ -7,7 +7,8 @@ class theme_config implements e_theme_config
 	{
  
 		$fields = array(
-			'phone'       => array('title' => 'Header Phone Number', 'type'=>'text', 'help'=>''),
+			'topbar' => array('title' => 'Top Bar (Social Icons)', 'type'=>'boolean', 'help'=>''),
+			'phone'         => array('title' => 'Header Phone Number', 'type'=>'text', 'help'=>''),
  		);
 		return $fields;
 

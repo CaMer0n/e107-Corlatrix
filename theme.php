@@ -260,21 +260,7 @@ $LAYOUT['_header_'] =  <<<TMPL
 TMPL;     */
 $LAYOUT['_header_'] = '
 <header id="header">
-<div class="top-bar">
-<div class="container">
-<div class="row">
-   <div class="col-sm-6 col-xs-4">
-	   {CORLATE_PHONE}
-   </div>
-   <div class="col-sm-6 col-xs-8">
-	  <div class="social">
-		  {XURL_ICONS: template=header}
-		  {CORLATE_SEARCH}
-	  </div>
-   </div>
-</div>
-</div><!--/.container-->
-</div><!--/.top-bar-->
+{CORLATE_TOPBAR}
 <nav class="navbar navbar-inverse" role="banner">
 <div class="container">
 <div class="navbar-header">
@@ -397,7 +383,11 @@ TMPL;
 $LAYOUT['default'] =  <<<TMPL
     <section id="content">
         <div class="container">
+        	{MENU=1}
 			{---}
+			{MENU=2}
+			{MENU=3}
+			
 		</div>
 	</section>
 TMPL;
@@ -407,6 +397,8 @@ TMPL;
 $LAYOUT['custom_home'] =  <<<TMPL
 
 	{ALERTS}
+	
+	{MENU=1}
 
 	{CHAPTER_MENUS: name=home-slider}
 

@@ -13,9 +13,40 @@
 class theme_shortcodes extends e_shortcode
 {
 	// public $override = true;
+	private $themePref = null;
 
 	function __construct()
 	{
+		$themePref = e107::pref('theme');
+	}
+
+
+	function sc_corlate_topbar()
+	{
+
+		if(!$this->themePref['topbar'])
+		{
+			return null;
+		}
+
+		$text = '<div class="top-bar">
+		<div class="container">
+		<div class="row">
+		   <div class="col-sm-6 col-xs-4">
+			   {CORLATE_PHONE}
+		   </div>
+		   <div class="col-sm-6 col-xs-8">
+			  <div class="social">
+				  {XURL_ICONS: template=header}
+				  {CORLATE_SEARCH}
+			  </div>
+		   </div>
+		</div>
+		</div><!--/.container-->
+		</div><!--/.top-bar-->';
+
+		return e107::getParser()->parseTemplate($text,true);
+
 
 	}
 
@@ -23,7 +54,7 @@ class theme_shortcodes extends e_shortcode
 	function sc_corlate_phone()
 	{
 		$phone = e107::pref('theme', 'phone');
-		
+
 		if(empty($phone))
 		{
 			return null;
