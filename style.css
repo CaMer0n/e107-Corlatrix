@@ -230,3 +230,9 @@ ul.login-buttons li a {
 #carousel-bullets.carousel .carousel-controls a {
 	margin-right: 20px;
 	}
+
+a.navbar-brand { height: auto; padding-bottom:15px; max-width: 75%; }
+
+#layout-default section#content { min-height: 600px; }
+
+.cpage-body#services { background: none }

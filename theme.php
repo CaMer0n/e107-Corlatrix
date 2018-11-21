@@ -18,6 +18,7 @@ if(!defined('e107_INIT'))
 
 define("BOOTSTRAP", 3);
 define("FONTAWESOME", 4);
+define('VIEWPORT', "width=device-width, initial-scale=1.0");
 
 e107::library('load', 'bootstrap');
 e107::library('load', 'fontawesome');
@@ -36,18 +37,24 @@ e107::css('theme', 'css/responsive.css');
 e107::js('theme','js/html5shiv.js','','2','<!--[if lt IE 9]>','');
 e107::js('theme','js/respond.min.js','','2','','<![endif]-->');
 
-//JS - Note: Automatically sent to footer.
-e107::js("theme", "js/jquery.isotope.min.js", 'jquery');
-e107::js("theme", "js/main.js", 'jquery');
-e107::js("theme", "js/wow.min.js", 'jquery');
 
 if(THEME_LAYOUT == 'custom_home')
 {
   define('BODYTAG', '<body class="homepage '.THEME_LAYOUT.'">');
 
+
+}
+
 	e107::css('theme', 'css/prettyPhoto.css');
 	e107::js("theme", "js/jquery.prettyPhoto.js", 'jquery');
-}
+
+
+//JS - Note: Automatically sent to footer.
+e107::js("theme", "js/jquery.isotope.min.js", 'jquery');
+e107::js("theme", "js/main.js", 'jquery');
+e107::js("theme", "js/wow.min.js", 'jquery');
+
+
 
 // Search
 if(!defined('e_SEARCH'))
@@ -362,7 +369,7 @@ $LAYOUT['_footer_'] =  <<<TMPL
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
-					{SITEDISCLAIMER=2016}
+					{SITEDISCLAIMER}
                 </div>
 				<div class="col-sm-6">
 					{NAVIGATION=footernav}

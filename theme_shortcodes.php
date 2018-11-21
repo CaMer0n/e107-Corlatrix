@@ -231,17 +231,17 @@ class theme_shortcodes extends e_shortcode
 	}
 
 	// Site Disclaimer
-	function sc_sitedisclaimer($copyYear = NULL)
+	function sc_sitedisclaimer()
   	{
 	  	//	$default = "Proudly powered by <a href='http://e107.org'>e107</a> which is released under the terms of the GNU GPL License.";
 	    $default = '<a target="_blank" href="http://e107corlate.reconix.net/" title="Corlatrix">Corlatrix e107 theme</a>. Design by <a target="_blank" href="https://shapebootstrap.net/licenses" title="Free Twitter Bootstrap WordPress Themes and HTML templates">ShapeBootstrap</a>';
 	  	$sitedisclaimer = deftrue('SITEDISCLAIMER',$default);
 
-	    $copyYear = vartrue($copyYear,'2013');
+	 //   $copyYear = vartrue($copyYear,'2013');
 	  	$curYear = date('Y');
-	  	$text = '&copy; '. $copyYear . (($copyYear != $curYear) ? ' - ' . $curYear : '');
+	  //	$text = '&copy; '. $copyYear . (($copyYear != $curYear) ? ' - ' . $curYear : '');
 
-	  	$text .= ' '.$sitedisclaimer;
+	  	$text = str_replace('YYYY',$curYear, $sitedisclaimer);
        
 	  	return e107::getParser()->toHtml($text, true, 'SUMMARY');
   	}
